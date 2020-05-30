@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,8 +11,9 @@ import { Initial } from './routers/initial.js'
 import { Primary } from './routers/primary.js'
 import { FourOhFour } from './views/fourOhFour.js'
 
-import './App.css'
 import { LocationProvider } from './providers/locationProvider.js'
+
+import './App.css'
 
 const checkAuth = () => {
   const cookie = Cookie.get('houseCookie')
@@ -31,15 +32,6 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 )
 
 function App() {
-  useEffect(() => {
-    fetch('http://ip-api.com/json')
-      .then(res => res.json())
-      .then(res => {
-        setCommunity(res.city)
-      })
-      .catch(console.error)
-  }, [])
-
   return (
     <LocationProvider>
       <Router>
