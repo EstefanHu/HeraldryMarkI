@@ -102,7 +102,7 @@ const styles = {
     padding: '10px',
     fontSize: '1rem',
     fontWeight: 'bold',
-    backgroundColor: '#ff9b3d',
+    backgroundColor: '#ff8800',
     color: 'white',
     border: 'none'
   }

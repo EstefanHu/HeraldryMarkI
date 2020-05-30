@@ -32,7 +32,7 @@ const styles = {
     bottom: 0,
     width: '450px',
     background: 'white',
-    padding: '40px 30px 80px 30px'
+    padding: '40px 30px 80px 50px'
   },
   header: {
     display: 'flex',
