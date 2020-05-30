@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import { BsHouseFill } from 'react-icons/bs'
+import { BsShieldShaded } from 'react-icons/bs'
 
 import { Landing } from '../views/landing.js'
 import { LogReg } from '../layout/logReg.js'
@@ -8,7 +8,7 @@ import { LogReg } from '../layout/logReg.js'
 export const Initial = () => (
   <>
     <header style={styles.header}>
-      <h1><BsHouseFill style={{ color: 'black' }} /> :House</h1>
+      <h1><BsShieldShaded style={{ color: 'black' }} /> :Heraldry</h1>
       <ul style={styles.links}>
         <li>
           <a
