@@ -7,13 +7,15 @@ import {
 } from 'react-router-dom'
 import Cookie from 'js-cookie'
 
+import { Initial } from './routers/initial.js'
+import { Primary } from './routers/primary.js'
 import { FourOhFour } from './views/fourOhFour.js'
 
 import './App.css'
 
 const checkAuth = () => {
   const cookie = Cookie.get('houseCookie')
-  if (!cookie) return false
+  if (cookie) return false
   return true
 }
 
