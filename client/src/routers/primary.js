@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route } from 'react-router-dom'
+import { LocationContext } from '../providers/locationProvider.js'
 
 import { Dashboard } from '../views/dashboard.js'
+import { Nav } from '../components/nav.js'
 
-export const Primary = () => (
-  <main>
-    <Route exact path='/' component={Dashboard} />
-  </main>
-)
+export const Primary = () => {
+  const { community } = useContext(LocationContext);
+ 
+  return (
+    <main style={styles.container}>
+      <Nav />
+      <Route exact path='/app/dashboard' component={Dashboard} />
+    </main>
+  )
+}
+
+const styles = {
+  container: {
+    height: '100vh',
+    width: '100vw'
+  }
+}

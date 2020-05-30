@@ -12,6 +12,7 @@ import { Primary } from './routers/primary.js'
 import { FourOhFour } from './views/fourOhFour.js'
 
 import './App.css'
+import { LocationProvider } from './providers/locationProvider.js'
 
 const checkAuth = () => {
   const cookie = Cookie.get('houseCookie')
@@ -30,8 +31,6 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 )
 
 function App() {
-  const [community, setCommunity] = useState(null)
-
   useEffect(() => {
     fetch('http://ip-api.com/json')
       .then(res => res.json())
@@ -42,13 +41,15 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/(|register|login|privacy|terms|forgot)' component={Initial} />
-        <AuthRoute exact path='/app/(dashboard|new|community|settings)' component={Primary} />
-        <Route component={FourOhFour} />
-      </Switch>
-    </Router>
+    <LocationProvider>
+      <Router>
+        <Switch>
+          <Route exact path='/(|register|login|privacy|terms|forgot)' component={Initial} />
+          <AuthRoute exact path='/app/(dashboard|new|community|settings)' component={Primary} />
+          <Route component={FourOhFour} />
+        </Switch>
+      </Router>
+    </LocationProvider>
   )
 }
 
