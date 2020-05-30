@@ -1,10 +1,19 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 import { Landing } from '../views/landing.js'
 
 export const Initial = () => (
-  <main>
-    <Route exact path='/' component={Landing} />
-  </main>
+  <>
+    <nav>
+      <h1>Project:House</h1>
+      <Link to='/app/dashboard'>
+        <button
+        >Log in</button>
+      </Link>
+    </nav>
+    <main>
+      <Route exact path='/' component={Landing} />
+    </main>
+  </>
 )
