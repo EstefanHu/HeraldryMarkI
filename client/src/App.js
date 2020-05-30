@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom'
 import Cookie from 'js-cookie'
 
+import { FourOhFour } from './views/fourOhFour.js'
+
 import './App.css'
 
 const checkAuth = () => {
