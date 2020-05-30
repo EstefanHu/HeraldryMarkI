@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Login = ({props}) => {
+export const Login = ({ props }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -32,7 +32,7 @@ export const Login = ({props}) => {
       <h1 style={styles.title}>Sign in</h1>
       <p style={styles.create}>or <a href=''>create an account</a></p>
       <input
-        className='landing__form--input'
+        style={styles.input}
         type='email'
         value={email}
         onChange={e => setEmail(e.target.value)}
@@ -40,14 +40,14 @@ export const Login = ({props}) => {
         required
       />
       <input
-        className='landing__form--input'
+        style={styles.input}
         type='password'
         value={password}
         onChange={e => setPassword(e.target.value)}
         placeholder='Password'
         required
       />
-      <input type='submit' value='Log in' />
+      <input type='submit' value='Sign in' style={styles.submit} />
     </form>
   )
 }
@@ -59,5 +59,18 @@ const styles = {
   },
   title: {
 
+  },
+  input: {
+    padding: '8px 12px',
+    fontSize: '1rem',
+    marginBottom: '20px'
+  },
+  submit: {
+    padding: '10px',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    backgroundColor: '#ff9b3d',
+    color: 'white',
+    border: 'none'
   }
 }
