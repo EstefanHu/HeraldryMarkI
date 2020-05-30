@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { LocationContext } from '../providers/locationProvider.js'
 
 import { Dashboard } from '../views/dashboard.js'
-import { Nav } from '../components/nav.js'
+import { Nav } from '../layout/nav.js'
 
 export const Primary = () => {
   const { community } = useContext(LocationContext);
