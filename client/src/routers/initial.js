@@ -2,11 +2,11 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 
 import { Landing } from '../views/landing.js'
-import { LoginReg } from '../layout/loginReg.js'
+import { LogReg } from '../layout/logReg.js'
 
 export const Initial = () => (
   <main>
     <Landing />
-    <LoginReg />
+    <LogReg />
   </main>
 )
